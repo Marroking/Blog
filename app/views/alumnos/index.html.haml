@@ -1,0 +1,24 @@
+%h1 Listing alumnos
+
+%table
+  %tr
+    %th Nombre
+    %th Pa
+    %th Num control
+    %th
+    %th
+    %th
+
+  - @alumnos.each do |alumno|
+    %tr
+      %td= alumno.nombre
+      %td= alumno.pa
+      %td= alumno.num_control
+      %td= link_to 'Show', alumno
+      %td= link_to 'Edit', edit_alumno_path(alumno)
+      %td= link_to 'Destroy', alumno, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Alumno', new_alumno_path
+%a.button.btn-lg.btn-success{type: 'button', href: 'alumnos.pdf'} Reportes

@@ -1,0 +1,19 @@
+= form_for @alumno do |f|
+  - if @alumno.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@alumno.errors.count, "error")} prohibited this alumno from being saved:"
+      %ul
+        - @alumno.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nombre
+    = f.text_field :nombre
+  .field
+    = f.label :pa
+    = f.text_field :pa
+  .field
+    = f.label :num_control
+    = f.text_field :num_control
+  .actions
+    = f.submit 'Save'

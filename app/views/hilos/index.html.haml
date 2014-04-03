@@ -1,0 +1,25 @@
+%h1 Listing hilos
+
+%table
+  %tr
+    %th Id
+    %th Texto
+    %th Usuario
+    %th Estado
+    %th
+    %th
+    %th
+
+  - @hilos.each do |hilo|
+    %tr
+      %td= hilo.id
+      %td= hilo.texto
+      %td= hilo.usuario_id
+      %td= hilo.estado
+      %td= link_to 'Show', hilo
+      %td= link_to 'Edit', edit_hilo_path(hilo)
+      %td= link_to 'Destroy', hilo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Hilo', new_hilo_path

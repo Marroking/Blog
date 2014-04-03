@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Texto:
+  = @comentario.texto
+%p
+  %b Estado:
+  = @comentario.estado
+%p
+  %b Usuario:
+  = @comentario.usuario_id
+%p
+  %b Hilo:
+  = @comentario.hilo_id
+
+= link_to 'Edit', edit_comentario_path(@comentario)
+\|
+= link_to 'Back', comentarios_path

@@ -1,0 +1,27 @@
+%h1 Listing comentarios
+
+%table
+  %tr
+    %th Id
+    %th Texto
+    %th Estado
+    %th Usuario
+    %th Hilo
+    %th
+    %th
+    %th
+
+  - @comentarios.each do |comentario|
+    %tr
+      %td= comentario.id
+      %td= comentario.texto
+      %td= comentario.estado
+      %td= comentario.usuario_id
+      %td= comentario.hilo_id
+      %td= link_to 'Show', comentario
+      %td= link_to 'Edit', edit_comentario_path(comentario)
+      %td= link_to 'Destroy', comentario, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Comentario', new_comentario_path

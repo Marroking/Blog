@@ -1,0 +1,20 @@
+= form_for @hilo do |f|
+  - if @hilo.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@hilo.errors.count, "error")} prohibited this hilo from being saved:"
+      %ul
+        - @hilo.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :texto
+    = f.text_area :texto
+  .field
+    = f.label :usuario_id
+    = f.collection_select :usuario_id,Usuario.all,:id,:nombre
+  .field
+    = f.label :estado
+    = f.radio_button :estado,"1", label: 'Activo'
+    = f.radio_button :estado,"2", label: 'Inactivo'
+  .actions
+    = f.submit 'Save'

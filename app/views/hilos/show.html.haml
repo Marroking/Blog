@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Texto:
+  = @hilo.texto
+%p
+  %b Usuario:
+  = @hilo.usuario_id
+%p
+  %b Estado:
+  = @hilo.estado
+
+= link_to 'Edit', edit_hilo_path(@hilo)
+\|
+= link_to 'Back', hilos_path
