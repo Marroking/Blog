@@ -1,11 +1,18 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
+#Devise
+gem "devise", "~> 3.2.3"
+#Cancan
+gem "cancan", "1.6.10"
+
 gem 'rails', '4.0.2'
 
 gem "haml", "4.0.4"
 gem "haml-rails"
 
+#Gema para realizar reportes en PDF
 gem "prawnto_2", :require => "prawnto"
 
 # Use sqlite3 as the database for Active Record
