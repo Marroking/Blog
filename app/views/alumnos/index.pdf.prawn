@@ -1,3 +1,5 @@
+#Este es el codigo necesario para generar el reporte de los alumnos
+#En este caso, como una carta de Asignacion de estadia
 %w[b].each do |n1|
 text "<#{n1}>DEPENDENCIA:</#{n1}> " +
 " Dirección de vinculación", align: :right,
